@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExpressionRequest {
-    @JsonProperty("expression")
-    private String expression;
+public class ExpressionErrorResponse {
+    @JsonProperty("error")
+    private String error;
 }

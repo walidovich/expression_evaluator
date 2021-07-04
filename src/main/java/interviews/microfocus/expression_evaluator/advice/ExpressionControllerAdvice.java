@@ -1,8 +1,7 @@
-package interviews.microfocus.expression_evaluator.helpers;
+package interviews.microfocus.expression_evaluator.advice;
 
 import interviews.microfocus.expression_evaluator.exceptions.InvalidExpressionRequest;
-import interviews.microfocus.expression_evaluator.models.ExpressionResponse;
-import interviews.microfocus.expression_evaluator.models.ResultType;
+import interviews.microfocus.expression_evaluator.models.ExpressionErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,11 +9,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExpressionControllerAdvice {
     @ExceptionHandler(InvalidExpressionRequest.class)
-    public ResponseEntity<ExpressionResponse> invalidExpression() {
+    public ResponseEntity<ExpressionErrorResponse> invalidExpression(InvalidExpressionRequest exc) {
         return ResponseEntity.badRequest().body(
-                ExpressionResponse.builder()
-                        .resultType(ResultType.STR)
-                        .resultValue("error")
+                ExpressionErrorResponse.builder()
+                        .error(exc.getErrorMessage())
                         .build()
         );
     }
