@@ -112,7 +112,9 @@ public class ExpressionServiceImpl implements ExpressionService {
             }
         }
 
-        LOG.info("Operator to be evaluated is {}", operators.get(0));
+        if (!operators.isEmpty()) {
+            LOG.info("Operator to be evaluated is {}", operators.get(0));
+        }
 
         // We check for PLUS and MINUS before MULTIPLY AND DIVIDE because of operators priorities.
         // example: 2+3*4 should become 2+(3*4), firstExpression is 2 and secondExpression is 3*4
