@@ -12,9 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ExpressionServiceImplTest {
+public class ExpressionEvaluatorServiceImplTest {
     @Autowired
-    private ExpressionService expressionService;
+    private ExpressionEvaluatorService expressionEvaluatorService;
 
     @Test
     public void twoPlusThreeEqualsFiveTest() {
@@ -57,7 +57,7 @@ public class ExpressionServiceImplTest {
         ExpressionRequest expressionRequest = new ExpressionRequest();
         expressionRequest.setExpression(expression);
         try {
-            expressionService.evaluate(expressionRequest);
+            expressionEvaluatorService.evaluate(expressionRequest);
         } catch (InvalidExpressionRequestException invalidExpressionRequestException) {
             Assertions.assertTrue(invalidExpressionRequestException.getErrorMessage().toLowerCase().contains("division by zero"));
         }
@@ -231,7 +231,7 @@ public class ExpressionServiceImplTest {
         ExpressionRequest expressionRequest = new ExpressionRequest();
         expressionRequest.setExpression(expression);
         try {
-            expressionService.evaluate(expressionRequest);
+            expressionEvaluatorService.evaluate(expressionRequest);
         } catch (InvalidExpressionRequestException invalidExpressionRequestException) {
             Assertions.assertTrue(true, "expression " + expression + " didn't threw an invalid request exception");
         }
@@ -241,7 +241,7 @@ public class ExpressionServiceImplTest {
         ExpressionRequest expressionRequest = new ExpressionRequest();
         expressionRequest.setExpression(expression);
         try {
-            ExpressionResponse expressionResponse = expressionService.evaluate(expressionRequest);
+            ExpressionResponse expressionResponse = expressionEvaluatorService.evaluate(expressionRequest);
             Assertions.assertEquals(expectedResult, expressionResponse.getResult(),
                     "expression " + expression + " returned different result than " + expectedResult);
         } catch (InvalidExpressionRequestException invalidExpressionRequestException) {

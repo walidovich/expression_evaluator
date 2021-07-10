@@ -4,6 +4,6 @@ import interviews.microfocus.expression_evaluator.exceptions.InvalidExpressionRe
 import interviews.microfocus.expression_evaluator.models.ExpressionRequest;
 import interviews.microfocus.expression_evaluator.models.ExpressionResponse;
 
-public interface ExpressionService {
+public interface ExpressionEvaluatorService {
     ExpressionResponse evaluate(ExpressionRequest expressionRequest) throws InvalidExpressionRequestException;
 }

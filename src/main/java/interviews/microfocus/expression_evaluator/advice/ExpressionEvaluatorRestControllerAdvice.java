@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class ExpressionControllerAdvice {
+public class ExpressionEvaluatorRestControllerAdvice {
     @ExceptionHandler(InvalidExpressionRequestException.class)
     public ResponseEntity<ExpressionErrorResponse> invalidExpression(InvalidExpressionRequestException exc) {
         // We build  ResponseEntity with proper http error and error body

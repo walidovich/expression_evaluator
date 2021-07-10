@@ -3,7 +3,7 @@ package interviews.microfocus.expression_evaluator.controllers;
 import interviews.microfocus.expression_evaluator.exceptions.InvalidExpressionRequestException;
 import interviews.microfocus.expression_evaluator.models.ExpressionRequest;
 import interviews.microfocus.expression_evaluator.models.ExpressionResponse;
-import interviews.microfocus.expression_evaluator.services.ExpressionServiceImpl;
+import interviews.microfocus.expression_evaluator.services.ExpressionEvaluatorServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-public class ExpressionController {
+public class ExpressionEvaluatorRestController {
 
-    private static Logger LOG = LoggerFactory.getLogger(ExpressionController.class);
-    private ExpressionServiceImpl expressionServiceImpl;
+    private static Logger LOG = LoggerFactory.getLogger(ExpressionEvaluatorRestController.class);
+    private ExpressionEvaluatorServiceImpl expressionServiceImpl;
 
     @Autowired
-    public ExpressionController(ExpressionServiceImpl expressionServiceImpl) {
+    public ExpressionEvaluatorRestController(ExpressionEvaluatorServiceImpl expressionServiceImpl) {
         this.expressionServiceImpl = expressionServiceImpl;
     }
 

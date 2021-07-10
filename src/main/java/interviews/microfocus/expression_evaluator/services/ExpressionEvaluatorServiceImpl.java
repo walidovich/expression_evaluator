@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class ExpressionServiceImpl implements ExpressionService {
+public class ExpressionEvaluatorServiceImpl implements ExpressionEvaluatorService {
 
-    private static Logger LOG = LoggerFactory.getLogger(ExpressionServiceImpl.class);
+    private static Logger LOG = LoggerFactory.getLogger(ExpressionEvaluatorServiceImpl.class);
 
     /**
      * @param expressionRequest, a string containing a mathematical expression
