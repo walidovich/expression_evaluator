@@ -47,7 +47,7 @@ public class ExpressionEvaluatorServiceImpl implements ExpressionEvaluatorServic
             // If something went wrong, we catch the exception, set a general error message and throw the exception
             ExpressionErrorResponse expressionErrorResponse = ExpressionErrorResponse
                     .builder()
-                    .error("error evaluating expression : " + expressionRequest.getExpression())
+                    .error("Error evaluating expression: " + expressionRequest.getExpression())
                     .build();
             throw new InvalidExpressionRequestException(expressionErrorResponse.getError());
         }
