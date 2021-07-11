@@ -5,7 +5,7 @@
 ### URL         : http://localhost:8080/evaluate
 ### Method      : POST
 
-### Examplea Request/Response
+### Examples of Request/Response
 * request1    : {
                     "expression": "abs(-2)-sizeof(123)"
                 }
